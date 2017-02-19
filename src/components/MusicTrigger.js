@@ -6,31 +6,42 @@ import ReactHowler from 'react-howler';
 class MusicTrigger extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      isPlaying: false,
-    }
+  }
+
+  static defaultProps = {
+    volume: 0.5,
+    fadeInDuration: 5000,
+    topOffset: '-200px',
   }
 
   onEnter = () => {
-    this.setState({
-      isPlaying: true,
-    });
+    console.log('enter')
+    const { fadeInDuration, volume } = this.props;
+    this.audio.howler.fade(0, volume, fadeInDuration)
   }
 
   onLeave = () => {
-    this.setState({
-      isPlaying: false,
-    });
+    console.log('leave')
+    const { fadeInDuration, volume } = this.props;
+    this.audio.howler.fade(volume, 0, fadeInDuration)
   }
 
   render() {
-    const { isPlaying } = this.state;
+    const { musicSrc, soundRemainPx } = this.props
     return (
-      <Waypoint onEnter={this.onEnter} onLeave={this.onLeave}>
+      <Waypoint
+        onEnter={this.onEnter}
+        onLeave={this.onLeave}
+        topOffset={soundRemainPx}
+      >
         <div>
           <ReactHowler
-            src='http://goldfirestudios.com/proj/howlerjs/sound.ogg'
-            playing={isPlaying}
+            src={musicSrc}
+            playing={true}
+            volume={0.0}
+            ref={(ref) => {this.audio = ref}}
+            loop={true}
+            debug={true}
           />
         </div>
       </Waypoint>
@@ -39,7 +50,10 @@ class MusicTrigger extends Component {
 }
 
 MusicTrigger.propTypes = {
-
+  musicSrc: PropTypes.string.isRequired,
+  volume: PropTypes.number,
+  fadeInDuration: PropTypes.number,
+  soundRemainPx: PropTypes.string,
 };
 
 export default MusicTrigger;

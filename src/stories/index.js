@@ -36,7 +36,7 @@ storiesOf('MusicTrigger', module)
     <div>
       <Paragraph text={'你好啊，這是一段文字'} height={'100vh'} />
       <Paragraph text={'你好啊，這是另一段文字'} height={'100vh'} />
-      <MusicTrigger />
+      <MusicTrigger musicSrc={'http://goldfirestudios.com/proj/howlerjs/sound.ogg'} />
       <Paragraph text={'你好啊，這是再一段文字'} height={'100vh'} />
       <Paragraph text={'底下沒了'} height={'100vh'} />
     </div>
