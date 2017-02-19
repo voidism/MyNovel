@@ -13,7 +13,6 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        {this.props.children}
         <div className="row">
           <div className="col-xs-12
                       col-sm-8
