@@ -1627,6 +1627,10 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
 
+consolidated-events@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/consolidated-events/-/consolidated-events-1.0.1.tgz#70f475f4a5d6d20428e702da1b8870d9cc031a14"
+
 constants-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
@@ -2894,6 +2898,10 @@ home-or-tmp@^2.0.0:
 hosted-git-info@^2.1.4:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.2.0.tgz#7a0d097863d886c0fabbdcd37bf1758d8becf8a5"
+
+howler@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/howler/-/howler-2.0.2.tgz#74862fdc86db5130c861f7528b1b06f21b16bcbf"
 
 html-comment-regex@^1.1.0:
   version "1.1.1"
@@ -4817,6 +4825,12 @@ react-fuzzy@^0.3.3:
     classnames "^2.2.3"
     fuse.js "^2.2.0"
 
+react-howler@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/react-howler/-/react-howler-3.5.0.tgz#c7d6e200f0edda277e42f5b124cfbec892522e47"
+  dependencies:
+    howler "^2.0.0"
+
 react-inspector@^1.1.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-1.1.2.tgz#192bc54f2be44f9fa0f29f183386f7f6e380f5ec"
@@ -4923,6 +4937,12 @@ react-stubber@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-stubber/-/react-stubber-1.0.0.tgz#41ee2cac72d4d4fd70a63896da98e13739b84628"
   dependencies:
     babel-runtime "^6.5.0"
+
+react-waypoint@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-waypoint/-/react-waypoint-5.1.0.tgz#fc00df2b00997c9f4abff8650547edf016ce7ab7"
+  dependencies:
+    consolidated-events "^1.0.1"
 
 react@^15.4.2:
   version "15.4.2"
