@@ -2,7 +2,10 @@ import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
 import Button from './Button';
 import Welcome from './Welcome';
-import TextArea from '../components/TextArea';
+
+import Chapter1 from '../Chapter1';
+
+import Paragraph from '../components/Paragraph';
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
@@ -17,7 +20,12 @@ storiesOf('Button', module)
     <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>
   ));
 
-storiesOf('TextArea', module)
+storiesOf('Chapter1', module)
+  .add('Normal', () => (
+    <Chapter1 />
+  ));
+
+storiesOf('Paragraph', module)
   .add('with short text', () => (
-    <TextArea text={'你好啊，這是一段文字'} />
+    <Paragraph text={'你好啊，這是一段文字'} />
   ));

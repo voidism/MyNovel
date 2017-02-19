@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
 import App from './App';
 import Chapter1 from './Chapter1';
@@ -11,7 +11,8 @@ import 'flexboxgrid/css/flexboxgrid.min.css';
 import './index.css';
 
 const routes = (
-  <Route path="/" component={App}>
+  <Route path="/">
+    <IndexRoute component={App} />
     <Route path="chapter1" components={Chapter1} />
     <Route path="chapter2" components={Chapter2} />
     <Route path="chapter3-ge" components={Chapter3GoodEnding} />
