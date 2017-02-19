@@ -7,8 +7,8 @@ import Chapter1 from './Chapter1';
 import Chapter2 from './Chapter2';
 import Chapter3GoodEnding from './Chapter3GoodEnd';
 import Chapter3BadEnding from './Chapter3BadEnd';
+import 'flexboxgrid/css/flexboxgrid.min.css';
 import './index.css';
-
 
 const routes = (
   <Route path="/" component={App}>
