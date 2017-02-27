@@ -5,6 +5,7 @@ class ParallaxContainer extends Component {
     super(props);
     this.state = {
       position: 'initial',
+      childrenHidden: true,
     };
   }
 
@@ -20,36 +21,44 @@ class ParallaxContainer extends Component {
 
   position = () => {
     requestAnimationFrame(() => {
-      const scrollTop = Math.max(
-        document.body.scrollTop,
-        document.documentElement.scrollTop
-      );
-
       const viewportHeight = window.innerHeight;
-      const widget = this.widget;
-      const widgetDimensions = widget.getBoundingClientRect();
-      const { top, bottom, height } = widgetDimensions;
-
+      const container = this.container;
+      const containerDimensions = container.getBoundingClientRect();
+      const { top, bottom, height } = containerDimensions;
+      // console.log({ top, bottom, height, viewportHeight });
       if (bottom < 0 || top > viewportHeight) {
+        this.setState({
+          childrenHidden: true,
+        });
         return;
       }
-      // console.log({ top, bottom, height, viewportHeight, scrollTop });
       this.setState({
         position: {
-          top, bottom, height, viewportHeight, scrollTop,
+          top,
+          viewportHeight,
         },
+        childrenHidden: false,
       });
-    })
+    });
   }
 
   render() {
-    const { height, children } = this.props;
-    const innerChildren = Children.map(children,
+    const { top, viewportHeight } = this.state.position;
+    const { childrenHidden } = this.state;
+    const { containerHeight, children } = this.props;
+    const innerChildren = Children.map(
       children,
-      child => React.cloneElement(child, {})
+      child => React.cloneElement(child, {
+        distanceMoved: viewportHeight - top,
+        hidden: childrenHidden,
+      }),
     );
+    const containerStyle = {
+      height: containerHeight,
+      position: 'relative',
+    };
     return (
-      <div style={{ height }}>
+      <div style={containerStyle} ref={(c) => { this.container = c; }}>
         {innerChildren}
       </div>
     );
@@ -57,8 +66,8 @@ class ParallaxContainer extends Component {
 }
 
 ParallaxContainer.propTypes = {
-  children: PropTypes.element,
-  height: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+  containerHeight: PropTypes.string.isRequired,
 };
 
 export default ParallaxContainer;

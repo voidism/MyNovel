@@ -14,6 +14,7 @@ import {
   ParallaxLayer,
 } from '../components/Parallax';
 
+
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
     <Welcome showApp={linkTo('Button')} />
@@ -53,10 +54,13 @@ storiesOf('Parallax', module)
     <div>
       <Paragraph text={'你好啊，這是一段文字'} height={'100vh'} />
       <Paragraph text={'你好啊，這是另一段文字'} height={'100vh'} />
-      <ParallaxContainer height={'300vh'}>
-        <ParallaxLayer />
-        <ParallaxLayer />
-        <ParallaxLayer />
+      <ParallaxContainer containerHeight={'200vh'}>
+        <ParallaxLayer speed={0.5} startTop={'0px'} zIndex={-10}>
+          <div>Hey1</div>
+        </ParallaxLayer>
+        <ParallaxLayer speed={0.1} startTop={'0px'} zIndex={-10}>
+          <div>Hey2</div>
+        </ParallaxLayer>
       </ParallaxContainer>
       <Paragraph text={'你好啊，這是再一段文字'} height={'100vh'} />
       <Paragraph text={'底下沒了'} height={'100vh'} />
