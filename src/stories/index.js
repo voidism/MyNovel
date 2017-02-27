@@ -1,5 +1,7 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@kadira/storybook';
+import 'flexboxgrid/css/flexboxgrid.min.css';
+
 import Button from './Button';
 import Welcome from './Welcome';
 
@@ -7,6 +9,10 @@ import Chapter1 from '../Chapter1';
 
 import Paragraph from '../components/Paragraph';
 import MusicTrigger from '../components/MusicTrigger';
+import {
+  ParallaxContainer,
+  ParallaxLayer,
+} from '../components/Parallax';
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
@@ -37,6 +43,21 @@ storiesOf('MusicTrigger', module)
       <Paragraph text={'你好啊，這是一段文字'} height={'100vh'} />
       <Paragraph text={'你好啊，這是另一段文字'} height={'100vh'} />
       <MusicTrigger musicSrc={'http://goldfirestudios.com/proj/howlerjs/sound.ogg'} />
+      <Paragraph text={'你好啊，這是再一段文字'} height={'100vh'} />
+      <Paragraph text={'底下沒了'} height={'100vh'} />
+    </div>
+  ));
+
+storiesOf('Parallax', module)
+  .add('with short text', () => (
+    <div>
+      <Paragraph text={'你好啊，這是一段文字'} height={'100vh'} />
+      <Paragraph text={'你好啊，這是另一段文字'} height={'100vh'} />
+      <ParallaxContainer height={'300vh'}>
+        <ParallaxLayer />
+        <ParallaxLayer />
+        <ParallaxLayer />
+      </ParallaxContainer>
       <Paragraph text={'你好啊，這是再一段文字'} height={'100vh'} />
       <Paragraph text={'底下沒了'} height={'100vh'} />
     </div>
