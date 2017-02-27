@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-
+import { default as cn } from 'classnames';
 
 const Paragraph = ({
   text,
@@ -18,9 +18,22 @@ const Paragraph = ({
     textAlign,
     ...extraStyle,
   };
+  const flexClasses = cn(
+    'col-xs-12',
+    'col-sm-offset-2',
+    'col-sm-8',
+    'col-md-offset-6',
+    'col-md-6',
+    'col-lg-offset-4',
+    'col-lg-4',
+  );
   return (
-    <div style={textStyle}>
-      {text}
+    <div className="row">
+      <div className={flexClasses}>
+        <div style={textStyle}>
+          {text}
+        </div>
+      </div>
     </div>
   );
 };
