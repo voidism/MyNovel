@@ -9,11 +9,12 @@ import Chapter1 from '../Chapter1';
 
 import Paragraph from '../components/Paragraph';
 import MusicTrigger from '../components/MusicTrigger';
+
 import {
   ParallaxContainer,
   ParallaxLayer,
 } from '../components/Parallax';
-
+import FixBackgroundVideoText from '../components/FixBackgroundVideoText';
 
 storiesOf('Welcome', module)
   .add('to Storybook', () => (
@@ -62,6 +63,25 @@ storiesOf('Parallax', module)
           <div>Hey2</div>
         </ParallaxLayer>
       </ParallaxContainer>
+      <Paragraph text={'你好啊，這是再一段文字'} height={'100vh'} />
+      <Paragraph text={'底下沒了'} height={'100vh'} />
+    </div>
+  ));
+
+storiesOf('FixBackgroundVideoText', module)
+  .add('with short text', () => (
+    <div>
+      <Paragraph text={'你好啊，這是一段文字'} height={'100vh'} />
+      <Paragraph text={'你好啊，這是另一段文字'} height={'100vh'} />
+      <FixBackgroundVideoText>
+        <Paragraph
+          text={'這是影片上的字'}
+          height={'150vh'}
+          backgroundColor={'rgba(0, 0, 200, 0.1)'}
+          textAlign="center"
+          color="rgba(200, 200, 200, 0.8)"
+        />
+      </FixBackgroundVideoText>
       <Paragraph text={'你好啊，這是再一段文字'} height={'100vh'} />
       <Paragraph text={'底下沒了'} height={'100vh'} />
     </div>
