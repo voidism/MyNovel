@@ -36,6 +36,7 @@ class FixBackgroundVideoText extends Component {
 
   render() {
     const { isInViewport } = this.state;
+    const { srcUrl } = this.props;
     const containerStyle = {
       overflow: 'hidden',
     };
@@ -60,7 +61,7 @@ class FixBackgroundVideoText extends Component {
           muted
           loop
         >
-          <source src="https://s3-ap-southeast-1.amazonaws.com/novel-videos/aurora.mp4" type="video/mp4" />
+          <source src={srcUrl} type="video/mp4" />
         </video>
         {this.props.children}
       </div>
@@ -69,7 +70,7 @@ class FixBackgroundVideoText extends Component {
 }
 
 FixBackgroundVideoText.propTypes = {
-
+  srcUrl: PropTypes.string.isRequired,
 };
 
 export default FixBackgroundVideoText;

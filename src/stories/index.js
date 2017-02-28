@@ -73,7 +73,7 @@ storiesOf('FixBackgroundVideoText', module)
     <div>
       <Paragraph text={'你好啊，這是一段文字'} height={'100vh'} />
       <Paragraph text={'你好啊，這是另一段文字'} height={'100vh'} />
-      <FixBackgroundVideoText>
+      <FixBackgroundVideoText srcUrl={"https://s3-ap-southeast-1.amazonaws.com/novel-videos/aurora.mp4"}>
         <Paragraph
           text={'這是影片上的字'}
           height={'150vh'}
