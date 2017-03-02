@@ -56,6 +56,7 @@ class ParallaxContainer extends Component {
     const containerStyle = {
       height: containerHeight,
       position: 'relative',
+      overflow: 'hidden',
     };
     return (
       <div style={containerStyle} ref={(c) => { this.container = c; }}>

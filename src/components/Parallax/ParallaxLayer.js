@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const ParallaxLayer = (props) => {
   const { speed, startTop, distanceMoved, zIndex } = props;
-  const distanceToTop = speed * distanceMoved;
+  const distanceToTop = (1 - speed) * distanceMoved;
   const transform = props.hidden ? '' : `translateY(${distanceToTop}px)`;
   const style = {
     position: 'absolute',
