@@ -13,10 +13,11 @@ import './index.css';
 const routes = (
   <Route path="/">
     <IndexRoute component={App} />
-    <Route path="chapter1" components={Chapter1} />
-    <Route path="chapter2" components={Chapter2} />
-    <Route path="chapter3-ge" components={Chapter3GoodEnding} />
-    <Route path="chapter3-be" components={Chapter3BadEnding} />
+    <Route path="chapter1" component={Chapter1} />
+    <Route path="chapter2" component={Chapter2} />
+    <Route path="chapter3-ge" component={Chapter3GoodEnding} />
+    <Route path="chapter3-be" component={Chapter3BadEnding} />
+    <Route path="*" component={App} />
   </Route>
 )
 
