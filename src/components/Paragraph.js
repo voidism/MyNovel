@@ -16,13 +16,11 @@ const Paragraph = ({
   extraTextClass = [],
   extraWrapperClass = [],
 }) => {
-  console.log(backgroundColor, wrapperBackgroundColor)
   const wrapperStyle = {
     height,
     backgroundColor: (wrapperBackgroundColor === null) ? backgroundColor : wrapperBackgroundColor,
     ...extraWrapperStyle,
   };
-  console.log(wrapperStyle)
   const textStyle = {
     fontSize,
     color,
