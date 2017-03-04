@@ -28,6 +28,7 @@ const Paragraph = ({
     lineHeight,
     textAlign,
     verticalAlign,
+    whiteSpace: 'pre-wrap',
     ...extraTextStyle,
   };
   const wrapperFlexClass = cn(
