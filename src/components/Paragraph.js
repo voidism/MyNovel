@@ -4,8 +4,8 @@ import cn from 'classnames';
 const Paragraph = ({
   text,
   fontSize = '1em',
-  color = 'rgba(20, 20, 20, 0.9)',
-  backgroundColor = 'rgba(200, 200, 200, 1.0)',
+  color = 'rgba(220, 220, 220, 1.0)',
+  backgroundColor = 'rgba(20, 20, 20, 1.0)',
   wrapperBackgroundColor = null,
   lineHeight = '170%',
   height = '',
@@ -33,6 +33,10 @@ const Paragraph = ({
   };
   const wrapperFlexClass = cn(
     'row',
+    'center-xs',
+    'center-sm',
+    'center-md',
+    'center-lg',
     'middle-xs',
     'middle-sm',
     'middle-md',
@@ -40,12 +44,9 @@ const Paragraph = ({
     ...extraWrapperClass,
   )
   const flexClasses = cn(
-    'col-xs-12',
-    'col-sm-offset-2',
+    'col-xs-11',
     'col-sm-8',
-    'col-md-offset-3',
     'col-md-6',
-    'col-lg-offset-4',
     'col-lg-4',
     ...extraTextClass,
   );
