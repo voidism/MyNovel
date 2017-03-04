@@ -1,38 +1,59 @@
 import React, { PropTypes } from 'react';
-import { default as cn } from 'classnames';
+import cn from 'classnames';
 
 const Paragraph = ({
   text,
+  fontSize = '1em',
   color = 'rgba(20, 20, 20, 0.9)',
   backgroundColor = 'rgba(200, 200, 200, 1.0)',
+  wrapperBackgroundColor = null,
   lineHeight = '170%',
   height = '',
   textAlign = 'left',
-  extraStyle = {},
+  verticalAlign = 'top',
+  extraTextStyle = {},
+  extraWrapperStyle = {},
+  extraTextClass = [],
+  extraWrapperClass = [],
 }) => {
+  console.log(backgroundColor, wrapperBackgroundColor)
+  const wrapperStyle = {
+    height,
+    backgroundColor: (wrapperBackgroundColor === null) ? backgroundColor : wrapperBackgroundColor,
+    ...extraWrapperStyle,
+  };
+  console.log(wrapperStyle)
   const textStyle = {
+    fontSize,
     color,
     backgroundColor,
     lineHeight,
-    height,
     textAlign,
-    ...extraStyle,
+    verticalAlign,
+    ...extraTextStyle,
   };
+  const wrapperFlexClass = cn(
+    'row',
+    'middle-xs',
+    'middle-sm',
+    'middle-md',
+    'middle-lg',
+    ...extraWrapperClass,
+  )
   const flexClasses = cn(
     'col-xs-12',
     'col-sm-offset-2',
     'col-sm-8',
-    'col-md-offset-6',
+    'col-md-offset-3',
     'col-md-6',
     'col-lg-offset-4',
     'col-lg-4',
+    ...extraTextClass,
   );
   return (
-    <div className="row">
-      <div className={flexClasses}>
-        <div style={textStyle}>
-          {text}
-        </div>
+    <div className={wrapperFlexClass} style={wrapperStyle}>
+      <div className={flexClasses} style={textStyle}>
+        {text}
       </div>
     </div>
   );
@@ -40,6 +61,7 @@ const Paragraph = ({
 
 Paragraph.propTypes = {
   text: PropTypes.string.isRequired,
+  fontSize: PropTypes.string,
   color: PropTypes.string,
   backgroundColor: PropTypes.string,
   lineHeight: PropTypes.string,
