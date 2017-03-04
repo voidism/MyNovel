@@ -1,0 +1,8 @@
+.appTransition-appear {
+  opacity: 0.1,
+}
+
+.appTransition-appear.app-transition-appear-active {
+  opacity: 1;
+  transition: opacity 5s ease-in;
+}
