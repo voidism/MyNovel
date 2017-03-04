@@ -1,38 +1,75 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Paragraph from './components/Paragraph';
+
+import {
+  ParallaxContainer,
+  ParallaxLayer,
+} from './components/Parallax';
+
+import chirpy from './images/chirpy.png';
+import mountain from './images/mountain.png';
+import tree from './images/tree.png';
+import nightSky from './images/night-sky.png';
 
 class App extends Component {
   render() {
+    const imageStyle = {
+      minHeight: '800px',
+      width: '100vw',
+    };
+    // const imageStyle = {
+    //   minHeight: '100%',
+    //   minWidth: '100%',
+    //   height: 'auto',
+    //   width: 'auto',
+    // };
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome act</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="row">
-          <div className="col-xs-12
-                      col-sm-8
-                      col-md-6
-                      col-lg-4">
-              <div className="box">Responsive</div>
-          </div>
-          <div className="col-xs-12
-                      col-sm-8
-                      col-md-6
-                      col-lg-4">
-              <div className="box">Responsive</div>
-          </div>
-          <div className="col-xs-12
-                      col-sm-8
-                      col-md-6
-                      col-lg-4">
-              <div className="box">Responsive</div>
-          </div>
-        </div>
+      <div>
+        <Paragraph
+          text={"第一句引言"}
+          textAlign="center"
+          verticalAlign="middle"
+          height="100vh"
+          fontSize="3em"
+          color="rgba(220, 220, 220, 0.7)"
+          backgroundColor="rgba(20, 20, 20, 1.0)"
+        />
+        <Paragraph
+          text={"第二句引言"}
+          textAlign="center"
+          verticalAlign="middle"
+          height="50vh"
+          fontSize="3em"
+          color="rgba(120, 220, 30, 0.3)"
+          backgroundColor="rgba(100, 20, 30, 1.0)"
+        />
+        <ParallaxContainer containerHeight="150vh">
+          <ParallaxLayer speed={0.1} startTop={'-800px'} zIndex={-10} id={'1'}>
+            <img style={imageStyle} src={'https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_bg.jpg'} />
+          </ParallaxLayer>
+          <ParallaxLayer speed={0.2} startTop={'0px'} zIndex={10} id={'2'}>
+            <img style={imageStyle} src={'https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_man.png'} />
+          </ParallaxLayer>
+        </ParallaxContainer>
+        <Paragraph
+          text={"第三句引言"}
+          textAlign="center"
+          verticalAlign="middle"
+          height="100vh"
+          fontSize="3em"
+          color="rgba(220, 220, 220, 0.7)"
+          backgroundColor="rgba(20, 20, 20, 1.0)"
+        />
+        <Paragraph
+          text={"第四句引言"}
+          textAlign="center"
+          verticalAlign="middle"
+          height="50vh"
+          fontSize="3em"
+          color="rgba(120, 220, 30, 0.3)"
+          backgroundColor="rgba(100, 20, 30, 1.0)"
+        />
+
       </div>
     );
   }
