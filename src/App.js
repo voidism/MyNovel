@@ -6,10 +6,6 @@ import {
   ParallaxLayer,
 } from './components/Parallax';
 
-import chirpy from './images/chirpy.png';
-import mountain from './images/mountain.png';
-import tree from './images/tree.png';
-import nightSky from './images/night-sky.png';
 
 class App extends Component {
   render() {

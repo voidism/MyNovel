@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Paragraph from './components/Paragraph';
 import MusicTrigger from './components/MusicTrigger';
 
-import part1 from './texts/chapter1_part1.txt';
+// import part1 from './texts/chapter1_part1.txt';
 
 const Chapter1 = () => {
   const insideClass = cn(
@@ -40,7 +40,7 @@ const Chapter1 = () => {
           soundRemainPx="-200px"
         />
         <Paragraph
-          text={part1}
+          text={'part1'}
           textAlign="center"
           fontSize="1em"
           color="rgba(220, 20, 20, 0.7)"
