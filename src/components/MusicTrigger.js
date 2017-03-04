@@ -11,7 +11,7 @@ class MusicTrigger extends Component {
   static defaultProps = {
     volume: 0.5,
     fadeInDuration: 5000,
-    topOffset: '-200px',
+    soundRemainPx: '-200px',
   }
 
   onEnter = () => {
@@ -27,7 +27,7 @@ class MusicTrigger extends Component {
   }
 
   render() {
-    const { musicSrc, soundRemainPx } = this.props
+    const { musicSrc, soundRemainPx, playing } = this.props
     return (
       <Waypoint
         onEnter={this.onEnter}
@@ -36,8 +36,9 @@ class MusicTrigger extends Component {
       >
         <div>
           <ReactHowler
+            html5={true}
             src={musicSrc}
-            playing={true}
+            playing={playing}
             volume={0.0}
             ref={(ref) => {this.audio = ref}}
             loop={true}
@@ -51,6 +52,7 @@ class MusicTrigger extends Component {
 
 MusicTrigger.propTypes = {
   musicSrc: PropTypes.string.isRequired,
+  playing: PropTypes.bool.isRequired,
   volume: PropTypes.number,
   fadeInDuration: PropTypes.number,
   soundRemainPx: PropTypes.string,
