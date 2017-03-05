@@ -80,10 +80,10 @@ class App extends Component {
         />
         <MusicTrigger
           musicSrc="https://s3-ap-southeast-1.amazonaws.com/novel-videos/wave.mp3"
-          volume={0.5}
+          volume={0.2}
           playing={true}
           fadeInDUration={5000}
-          soundRemainPx="-200px"
+          soundRemainPx="-2000px"
         />
         <Paragraph
           text={part2}
@@ -134,7 +134,7 @@ class App extends Component {
         />
         <FixedImage
           imgSrc={oceanStar}
-          height="100vh"
+          height="200vh"
         />
         <Paragraph
           text={part2}
@@ -142,7 +142,7 @@ class App extends Component {
         />
         <FixedImage
           imgSrc={aurora}
-          height="70vh"
+          height="30vh"
         />
         <Paragraph
           text={part2}
