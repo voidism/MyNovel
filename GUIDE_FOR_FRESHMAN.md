@@ -2,17 +2,18 @@
 
 
 ## 設定環境
+- 安裝 git，並[設定 ssh](http://billy3321.blogspot.tw/2009/02/github-howto.html)
 - 安裝 node, npm: 在[這裡](https://nodejs.org/en/download/)選擇你的作業系統，下載並安裝。node 和 npm 會一起裝好。node是跑 Javascript 的直譯器，npm 則是一個與它搭配的套件管理工具
 - 安裝 yarn：在[這裡](https://yarnpkg.com/lang/en/docs/install/#windows-tab)選擇你的作業系統，下載並安裝。yarn 是由 facebook 開發的套件管理工具，目的在讓 npm 變得效能更好
 
 ## 下載專案
 - 先 fork 一份這個專案
 - 改一下專案名稱
-- 複製下來：
+- 複製下來(記得用 ssh 版本的)：
 ```
 # 打開你的 terminal (OSX, Linux)，或是 cmd (Windows)
 # 用 cd 指令到達你的目標資料夾
-git clone https://github.com/{your acount}/{your repo name}.git
+git clone git@github.com:{your account}/{your repo name}.git
 ```  
 
 ## 安裝
