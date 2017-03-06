@@ -34,7 +34,7 @@ yarn start
 請看`src/App.js`。這個框架使用的開發套件是 `React` ，一種在 Javascript 裡寫 HTML 的體系。一些基本的教學可以看[這裡](https://web-seminar.github.io/slide-v3/4/#/31?_k=sico7g)或[這裡](https://egghead.io/courses/react-fundamentals)
 
 ## 發布
-開發完成後，可以使用 github 提供 GitHub Pages 的服務，簡單架設一個靜態網頁。而這個框架只要輸入以下指令：
+開發完成後，可以使用 github 提供 GitHub Pages 的服務，簡單架設一個靜態網頁。將[這行](https://github.com/r04921035/chia/blob/master/package.json#L5)改成你的網址(`https://{your acount}.github.io/{your repo name}/`)，接著在 terminal 輸入以下指令：
 ```
 yarn deploy
 ```
